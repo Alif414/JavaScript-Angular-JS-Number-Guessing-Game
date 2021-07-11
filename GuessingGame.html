@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+    <head>
+    <title>Guessing game</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+            <script src="js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body data-ng-controller="myCtrl">
+
+        <div class="container">
+            <div class="row">
+                <h1>Guess the Number! <small class="text-muted">Between 1 and 100</small></h1>
+                <p>Start Guessing! <input ng-model="guess" type="number" /></p>
+            </div>
+
+            <div class="row">
+                <button class="btn btn-primary" ng-click="checkGuess()">Check</button>
+                <button class="btn btn-info" ng-click="initGame()">Start Again</button>
+                <button class="btn btn-warning" ng-click="showAns()">Give up</button>
+            </div>
+
+            <div class="row">
+                <div ng-show="diff>0" class="alert alert-warning">Too low!</div>
+                <div ng-show="diff<0" class="alert alert-warning">Too high!</div>
+                <div ng-show="diff===0" class="alert alert-success">BINGO!</div>
+                <div ng-show="reveal" class="alert alert-primary">{{reveal}}</div>
+            </div>
+      </div>
+
+
+            <!-- jQuery – required for Bootstrap plugins) -->
+            <script src="js/jquery.min.js"></script>
+            <!-- All Bootstrap  plug-ins  file -->
+            <script src="js/bootstrap.min.js"></script>
+            <!-- Basic AngularJS -->
+            <script src="js/angular.min.js"></script>
+            <!-- Your Controller -->
+            <script src="js/app.js"></script>
+
+    </body>
+</html>
